@@ -13,7 +13,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from __init__ import __
+from . import __
 
 class Switch(object):
     """Switch-Case class for Python"""
