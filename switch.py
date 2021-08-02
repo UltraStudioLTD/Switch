@@ -13,10 +13,11 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-class Switch:
+from __init__ import __
+
+class Switch(object):
     """Switch-Case class for Python"""
     global __
-    __ = "__default__"
     
     def __init__(self, cases: dict = {}):
         """
@@ -27,9 +28,7 @@ class Switch:
 		cases : dict, default: {}
 			Cases dictionary
         """
-        global __
-        __ = "__default__"
-        
+        super(Switch, self).__init__()
         self.cases = cases	# save cases
         self.default = cases[__] if __ in cases else None	# find default and save it if it exists in cases else save None
 
