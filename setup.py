@@ -1,11 +1,15 @@
 from setuptools import setup, find_packages
-                                                        setup(
+setup(
     name = 'switch',
     version = '1.0.0',
     author = 'Luka Mamukashvili',
     author_email = 'ultraluka0@gmail.com',
     description = ('Switch-Case class for Python'),
     license = 'GPL-3.0',
-    keywords = "",                                          url = 'https://github.com/UltraStudioLTD/Switch',
+    url = 'https://github.com/UltraStudioLTD/Switch',
     scripts = [],
-    py_modules = ['switch'],                                packages = find_packages(),                             install_requires = [],                                  download_url = 'https://github.com/UltraStudioLTD/Switch/tarball/master',                                   )
+    py_modules = ['switch'],
+    packages = find_packages(),
+    install_requires = [],
+    download_url = 'https://github.com/UltraStudioLTD/Switch/tarball/master',
+)
