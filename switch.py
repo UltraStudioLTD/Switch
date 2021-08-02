@@ -15,6 +15,8 @@
 
 class Switch:
     """Switch-Case class for Python"""
+    global __
+    __ = "__default__"
     
     def __init__(self, cases: dict = {}):
         """
