@@ -39,5 +39,5 @@ example # this will return current cases as below comment
 ```
 
 ## TODO
- [ ] Make second variant of usage with decorators
- [ ] Think about other additions
+ - [ ] Make second variant of usage with decorators
+ - [ ] Think about other additions :)
