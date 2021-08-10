@@ -10,6 +10,6 @@ setup(
     scripts = [],
     py_modules = ['switch'],
     packages = find_packages(),
-    install_requires = [],
-    download_url = 'https://github.com/UltraStudioLTD/Switch/tarball/master',
+    install_requires = ['typing;python_version<"3.5"'],
+    download_url = 'https://github.com/UltraStudioLTD/Switch/tarball/master'
 )
