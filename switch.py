@@ -16,6 +16,8 @@
 from __future__ import annotations
 from typing import Optional, Any
 
+__all__ = ["Switch"]
+
 class Switch(object):
 	"""Switch-Case class for Python"""
 	
