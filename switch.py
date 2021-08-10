@@ -59,7 +59,8 @@ class Switch(object):
 		key
 			new default key
 		"""
-	
+	self.default = key
+
 	def switch(self, key) -> Any:
 		"""
 		Switcher
