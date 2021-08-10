@@ -13,28 +13,31 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from switch import __
+from __future__ import annotations
+from typing import Optional, Any
 
 class Switch(object):
-    """Switch-Case class for Python"""
-    global __
-    
-    def __init__(self, cases: dict = {}):
-        """
-        Initializes Switch class with empty cases if no argument is inputed
-
+	"""Switch-Case class for Python"""
+	
+	def __init__(self, cases: dict = {}, default: Optional[Any] = None):
+		"""
+		Initializes Switch class with empty cases if no argument is inputed
+	
 		Parameters
 		----------
 		cases : dict, default: {}
 			Cases dictionary
-        """
-        super(Switch, self).__init__()
-        self.cases = cases	# save cases
-        self.default = cases[__] if __ in cases else None	# find default and save it if it exists in cases else save None
-
-    def case(self, key, value):
-        """Add case in cases list
-		[It overrides existing Case wwith same key]
+		default : Optional[Any], default: None
+			Default key
+		"""
+		if isinstance(cases, dict) is False:
+			raise TypeError("Cases should be dict (dictionary)")
+		self.cases, self.default = cases, default
+	
+	def case(self, key, value):
+		"""
+		Add case in cases list
+		[It overrides existing Case with same key]
 		
 		Parameters
 		----------
@@ -42,12 +45,22 @@ class Switch(object):
 			Case
 		value
 			Value of Case (key)
-        """
-        self.cases[key] = value
-    
-    def switch(self, key):
-        """
-        Switcher
+		"""
+		self.cases[key] = value
+	
+	def changeDefault(self, key):
+		"""
+		Changes default key
+		
+		Parameters
+		----------
+		key
+			new default key
+		"""
+	
+	def switch(self, key) -> Any:
+		"""
+		Switcher
 
 		Parameters
 		----------
@@ -57,5 +70,5 @@ class Switch(object):
 		Returns
 		-------
 			value corresponding to key if it exists else default
-        """
-        return self.cases[key] if key in self.cases else self.default
+		"""
+		return self.cases[key] if key in self.cases else (self.cases[self.default] if self.default in self.cases else None)
