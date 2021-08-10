@@ -36,6 +36,49 @@ class Switch(object):
 			raise TypeError("Cases should be dict (dictionary)")
 		self.cases, self.default = cases, default
 	
+	def __repr__(self) -> str:
+		keys = list(self.cases.keys())
+		out = "Switch(key):"
+		for key in keys:
+			if key != self.default:
+				out += f"\n\tCase({key}):\n\t\t{self.cases[key]}"
+		out += f"\n\tDefault({self.default}):\n\t\t{self.cases[self.default]}"
+		return out
+	
+	@property
+	def cases(self) -> dict:
+		"""
+		cases
+		
+		Returns
+		-------
+			current cases
+		"""
+		return self.cases
+	
+	@property
+	def default(self):
+		"""
+		default property
+		
+		Returns
+		-------
+			default key
+		"""
+		return self.default
+	
+	@default.setter
+	def default(self, default: Any):
+		"""
+		sets default key
+		
+		Parameters
+		----------
+		default: Any
+			new default key
+		"""
+		self.default = default
+	
 	def case(self, key, value):
 		"""
 		Add case in cases list
@@ -50,17 +93,6 @@ class Switch(object):
 		"""
 		self.cases[key] = value
 	
-	def changeDefault(self, key):
-		"""
-		Changes default key
-		
-		Parameters
-		----------
-		key
-			new default key
-		"""
-		self.default = key
-
 	def switch(self, key) -> Any:
 		"""
 		Switcher
