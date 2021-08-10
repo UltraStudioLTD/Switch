@@ -39,6 +39,8 @@ class Switch(object):
 	
 	def __repr__(self) -> str:
 		keys = list(self.cases.keys())
+		if len(keys) == 0:
+			return "Switch(key)"
 		out = "Switch(key):"
 		for key in keys:
 			if key != self.default:
